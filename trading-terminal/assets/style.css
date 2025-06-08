@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; }
+.dark { background-color: #1a202c; color: #f7fafc; }
+.light { background-color: #ffffff; color: #1a202c; }
+.card { border: 1px solid #444; border-radius: 0.25rem; padding: 1rem; margin: 0.5rem; background-color: inherit; }
+button { padding: 0.5rem 1rem; border: 1px solid #888; border-radius: 0.25rem; }
+table { width: 100%; border-collapse: collapse; }
+td, th { border: 1px solid #555; padding: 0.25rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
