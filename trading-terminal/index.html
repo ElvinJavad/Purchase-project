@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+<meta charset="UTF-8">
+<title>Trading Terminal</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<button id="theme-toggle">Toggle Dark Mode</button>
+<div id="dashboard" class="grid">
+  <div class="card" id="macro-card">
+    <h2>Macro Filter Engine</h2>
+    <p id="macro-status">Loading...</p>
+  </div>
+  <div class="card" id="tradefilter-card">
+    <h2>Trade Filter Engine</h2>
+    <ul id="watchlist"></ul>
+  </div>
+  <div class="card" id="entry-card">
+    <h2>Trade Entry Engine</h2>
+    <table>
+      <thead><tr><th>Symbol</th><th>Entry</th><th>Stop</th><th>Size</th></tr></thead>
+      <tbody id="entry-table"></tbody>
+    </table>
+  </div>
+  <div class="card" id="logger-card">
+    <h2>Trade Logger</h2>
+    <form id="trade-form">
+      <input id="tl-symbol" placeholder="Symbol" required>
+      <input id="tl-entry" type="number" placeholder="Entry" required>
+      <input id="tl-stop" type="number" placeholder="Stop" required>
+      <input id="tl-qty" type="number" placeholder="Qty" required>
+      <button type="submit">Log Trade</button>
+    </form>
+    <table>
+      <thead><tr><th>Symbol</th><th>Entry</th><th>Stop</th><th>Qty</th></tr></thead>
+      <tbody id="trade-list"></tbody>
+    </table>
+  </div>
+  <div class="card" id="exit-card">
+    <h2>Exit Management</h2>
+    <table>
+      <thead><tr><th>Symbol</th><th>Entry</th><th>Stop</th><th>Qty</th><th>Price</th><th>Status</th></tr></thead>
+      <tbody id="exit-table"></tbody>
+    </table>
+    <button id="check-prices">Check Prices</button>
+  </div>
+  <div class="card" id="backtest-card">
+    <h2>Backtest Engine</h2>
+    <p id="backtest-result">Running...</p>
+  </div>
+  <div class="card" id="journal-card">
+    <h2>Behavioral Journal</h2>
+    <form id="journal-form">
+      <input id="journal-note" placeholder="Daily note" required>
+      <button type="submit">Save</button>
+    </form>
+    <ul id="journal-list"></ul>
+  </div>
+</div>
+<script src="assets/scripts/macroFilter.js"></script>
+<script src="assets/scripts/tradeFilter.js"></script>
+<script src="assets/scripts/entryEngine.js"></script>
+<script src="assets/scripts/tradeLogger.js"></script>
+<script src="assets/scripts/exitManager.js"></script>
+<script src="assets/scripts/backtester.js"></script>
+<script src="assets/scripts/behavioralJournal.js"></script>
+<script>
+  document.getElementById('theme-toggle').addEventListener('click', function() {
+    document.documentElement.classList.toggle('dark');
+    document.documentElement.classList.toggle('light');
+  });
+</script>
+</body>
+</html>
